@@ -13,15 +13,16 @@ func main() {
 	// Disable printing time, source file, and line number of the logger.
 	log.SetFlags(0)
 
-	// Request a greeting message.
-	message, err := greetings.Hello("Chen")
+	// Request greeting messages for the names.
+	names := []string{"John", "Jack", "James"}
+	messages, err := greetings.Hellos(names)
 	// If an error was returned, print it to the console and exit the program.
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	// If no error was returned, print the returned message to the console.
-	fmt.Println(message)
+	// If no error was returned, print the returned map of messages to the console.
+	fmt.Println(messages)
 }
 
 // However, if we want to find the greetings package locally, we run
